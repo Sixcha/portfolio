@@ -1,0 +1,358 @@
+@mixin tablet {
+    @media screen and (max-width: 1024px) { @content; }
+  }
+
+@mixin phone {
+    @media screen and (max-width: 768px) { @content; }
+  }
+
+@mixin miniphone {
+    @media screen and (max-width: 650px) { @content; }
+  }
+$first-color: #AE948B;
+
+$secondary-color: #e6cdc3;
+
+$tertiary-color: #723401;
+
+$caption-color: #736e879c;
+
+$nav-color: #736e87;
+
+$content-color: #907168;
+
+$text-font: 'Work Sans', sans-serif;
+
+$title-font: 'Tangerine', cursive;
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size:62.5%;
+}
+
+body{
+    font-size:1.6rem;
+    background-color: $secondary-color;
+    font-family: $text-font;
+}
+.header{
+    width:100%;
+}
+
+nav{
+    display: flex;
+    //width: 41vw;
+    width: 100%;
+    justify-content: space-around;
+    background-color: $nav-color;
+    padding:1.5rem;
+    margin-bottom:3rem;
+    align-items: center;
+    border:1px solid black;
+    button{
+        width:10rem;
+        background-color: $nav-color;
+        border:none;
+        font-size:2rem;
+        cursor: pointer;
+        &:hover{
+            color:white;
+        }
+        &:not(:last-child){
+            @include miniphone{
+                border-right: 1px solid black;
+            }
+        }
+    }
+    @include phone{
+        width: 100%;
+    }
+}
+
+.about{
+    //margin-left: 2rem;
+    padding: 0 1rem 0 1rem ;
+    border:1px solid black;
+    background-color: $first-color;
+    //border-radius: 5px;
+    align-items: center;
+    flex-basis:30%;
+    min-height: 95vh;
+    max-height: 1400px;
+    @include phone{
+        width: 80%;
+    }
+    h1{
+        text-transform: uppercase;
+        text-align: center;
+    }
+    a{
+        text-decoration:none;
+        &:visited{
+            color:black;
+        }
+    }
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
+.spaced{
+    justify-content: space-between;
+}
+
+.mainDiv{
+    justify-content: flex-start;
+    @include phone{
+        flex-direction: column-reverse;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+    }
+}
+
+.flexFix{
+    min-width: 30%;
+    @include phone{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+#ajax{
+    justify-content: left;
+    flex-wrap:wrap;
+    max-width: 1200px;
+    //max-width: 55vw;
+    padding-left: 5rem;
+    @include phone{
+        padding-left: 0rem;
+        justify-content: center;
+        align-items: center;
+        max-width: 70vw;
+    }
+    @include phone{
+        max-width: 90vw;
+    }
+}
+
+.creationFix{
+    width:100%;
+    //margin-left: 2%;
+    height: 100%;
+    flex-wrap:wrap;
+    @include phone{
+        height: auto;
+    }
+    @include miniphone{
+        justify-content: space-evenly;
+    }
+}
+
+.test{
+    flex-basis: 22%;
+    height:25rem;
+    margin-bottom: 3rem;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    @include tablet{
+        flex-basis: 30%;
+        margin-right: 1.66%;
+        margin-left: 1.66%;
+    }
+    @include miniphone{
+        flex-basis: 45%;
+        margin-right: 2.5%;
+        margin-left: 2.5%;
+    }
+}
+
+.link{
+    height:100%;
+    width:100%;
+    background-color: $secondary-color;
+    padding-left: 0;
+    border:none;
+    cursor:pointer;
+}
+
+.creation{
+    border: 2px solid #351801;
+    //border-left: 5px solid #1d0d00; 
+    //border-radius:2% 0 0 2% ;
+    background-color: $tertiary-color;
+    padding:1rem;
+    align-items: center;
+    height:100%;
+    width:100%;
+    position:relative;
+    box-shadow: 4px 3px 2px rgb(44, 44, 44) ;
+    transition: box-shadow 0.1s;
+    &:hover{
+        box-shadow: 9px 7px 4px rgb(44, 44, 44) ;
+        .caption{
+            display: inline;
+        }
+    }
+    p{
+        margin:1rem;
+    }
+    .caption{
+        display:none;
+        position: absolute;
+        bottom: 0;
+        background-color: $caption-color;
+        width: 100%;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        @include tablet{
+            display: inline;
+        }
+        @include phone{
+            display: inline;
+        }
+        @include miniphone{
+            max-height: 40%;
+        }
+        p{
+            font-size:1.3rem;
+            @include miniphone{
+                font-size:1.1rem;
+            }
+        }
+    }
+    h3{
+        //font-weight: normal;
+        font-family: $title-font;
+        font-size: 3rem;
+        @include miniphone{
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.headerFix{
+    flex-basis: 30%;
+}
+
+.content{
+    background-color: $content-color;
+    border: 1px solid black;
+    padding:2rem;
+    box-shadow: 4px 3px 2px rgb(44, 44, 44) ;
+    line-height: 2.2rem;
+    width: 100%;
+    @include tablet{
+        margin-right: 5rem;
+    }
+    @include phone{
+        margin: 0 2rem 3rem 2rem;
+    }
+}
+
+.creationPic{
+    max-width:80%;
+    @include miniphone{
+        display: none;
+    }
+}
+.left{
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}
+.right{
+    position:absolute;
+    bottom: 0;
+    right: 0;
+}
+.center{
+    position:absolute;
+    bottom: 1rem;
+}
+
+.side{
+    position: fixed;
+    align-items: center;
+    right: 1rem;
+    background-color: $nav-color;
+    border:1px solid black;
+    #mobileFunc{
+        display: block;
+    }
+    @include phone{
+        box-shadow:0 0 5px black;
+        border-radius: 40px 0 0 40px;
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        top:7.5rem;
+        right: 0;
+        border-width: 1px 0 1px 1px;
+        border-style: solid;
+        border-color: black;
+    }
+    @include miniphone{
+        flex-direction: row;
+        height: 5.5rem;
+    }
+    >*{
+        margin:1rem 0 1rem 0;
+        @include miniphone{
+            margin: 0 0.5rem 0 0.5rem;
+            width: 100%;
+        }
+    }
+    a{
+        text-decoration: none;
+        color:black;
+        &:first-child{
+            width: 9.5rem;
+            padding: 2px 0 2px 0;
+            @include phone{
+                padding-right: 1rem;
+                padding-left: 1rem;
+                width: auto;
+            }
+        }
+        &:not(:first-child){
+            @include tablet{
+                display: none;
+            }
+            @include miniphone{
+                margin: 0 1rem 0 1rem;
+            }
+        }
+        &:not(:last-child) &:not(:first-child){
+            @include miniphone{
+                border-right: 1px solid black;
+                padding-right: 1rem;
+            }
+        }
+        &:visited{
+            color:black;
+        }
+        &:hover{
+            color:white;
+        }
+    }
+    .langLink{
+        width: 100%;
+        padding: 5%;
+        text-align: center;
+        @include phone{
+            padding: 5% 0 5% 0;
+        }
+    }
+}

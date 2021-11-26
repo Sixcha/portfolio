@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/fontawesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/brands.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/solid.min.css"> 
+    <link rel="stylesheet" href="scss/style.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <header>
+    </header>
+    <main>
+        <div class="row mainDiv">
+            <section class="about column">
+                <img src="" alt="">
+                <h1>Paul Bora Akcan</h1>
+                <p>Ecrivain / Developeur Web</p>
+                <a href="https://github.com/Sixcha" target="_blank" class="fab fa-github fa-2x"></a>
+                <p>Bla bla bla details</p>
+            </section>
+            <div class="flexFix">
+                <section id="ajax" class="column">
+                    <nav>
+                        <button type="button" id="WritingButton">Littérature</button>
+                        <button type="button" id="WebsitesButton">Sites Web</button>
+                        <button type="button" id="GamesButton">Jeux</button>
+                    </nav>
+                    <div class="creationFix row" id="ajax2">
+                    <?php foreach ($articles as $article): ?>
+                        <div class="test" >
+                            <div class="link">
+                                <article class="creation column articleButton" id="<?=$article["id"]?>">
+                                    <h3><?= $article["title"] ?> (<?= $article["type"] ?>)</h3>
+                                    <img class="creationPic <?= $article["img_position"]?>" src="../imgs/<?= $article["img"] ?>" alt="">
+                                    <div class="caption"><p><?= $article["caption"] ?></p></div>
+                                </article>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                    </div>
+                </section>
+            </div>
+            <div class="side column">
+                <a href="javascript:void(0);" onclick="showSide()" id="mobileFunc" class="langLink"><i id="faArrow" class="fas fa-angle-left fa-2x"></i></a>
+                <a href="index.php" class="langLink hidden">Eng</a>
+                <a href="index.php?lang=fr" class="selectedLang langLink hidden">Fr</a>
+                <a href="#" class="hidden">Retour au Sommet</a>
+                <a href="phtml/about.phtml" class="hidden">A Propos</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

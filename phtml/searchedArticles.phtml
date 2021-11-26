@@ -1,0 +1,11 @@
+<?php foreach ($articles as $article): ?>
+    <div class="test" >
+        <div class="link">
+            <article class="creation column articleButton" id="<?=$article["id"]?>">
+                <h3><?= $article["title"] ?> (<?= $article["type"] ?>)</h3>
+                <img class="creationPic <?= $article["img_position"]?>" src="../imgs/<?= $article["img"] ?>" alt="">
+                <div class="caption"><p><?= $article["caption"] ?></p></div>
+            </article>
+        </div>
+    </div>
+<?php endforeach; ?>
