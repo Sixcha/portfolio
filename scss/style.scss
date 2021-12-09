@@ -42,6 +42,13 @@ body{
     width:100%;
 }
 
+a{
+    color:black;
+    &:hover{
+        color:white;
+    }
+}
+
 nav{
     display: flex;
     //width: 41vw;
@@ -91,8 +98,16 @@ nav{
     }
     a{
         text-decoration:none;
-        &:visited{
-            color:black;
+    }
+    div{
+        margin-bottom: 1.5rem;
+        i{
+            margin-right: 0.5rem;
+        }
+        a{
+            &:hover{
+                color:white;
+            }
         }
     }
 }

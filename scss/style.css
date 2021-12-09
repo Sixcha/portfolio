@@ -17,6 +17,14 @@ body {
   width: 100%;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: white;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -85,8 +93,16 @@ nav button:hover {
   text-decoration: none;
 }
 
-.about a:visited {
-  color: black;
+.about div {
+  margin-bottom: 1.5rem;
+}
+
+.about div i {
+  margin-right: 0.5rem;
+}
+
+.about div a:hover {
+  color: white;
 }
 
 .row {
