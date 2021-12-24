@@ -1,9 +1,9 @@
 <?php
 
+session_start();
+
 require_once "config/config.php";
 require_once "lib/lib.php";
-
-session_start();
 
 $dbh = dbConnexion();
 $sth = $dbh ->prepare( "SELECT * FROM literature ORDER BY id DESC");
