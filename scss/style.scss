@@ -137,7 +137,7 @@ nav{
 }
 
 .flexFix{
-    min-width: 30%;
+    min-width: 70%;
     @include phone{
         width: 100%;
         display: flex;
