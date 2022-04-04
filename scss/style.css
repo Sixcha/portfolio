@@ -9,7 +9,7 @@ html {
 
 body {
   font-size: 1.6rem;
-  background-color: #e6cdc3;
+  background-color: #d3d2d2;
   font-family: "Work Sans", sans-serif;
 }
 
@@ -19,10 +19,9 @@ body {
 
 a {
   color: black;
-}
-
-a:hover {
-  color: white;
+  /* &:hover{
+        color:teal;
+    } */
 }
 
 nav {
@@ -32,31 +31,35 @@ nav {
   width: 100%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background-color: #736e87;
+  background-color: #f5f5f5;
   padding: 1.5rem;
   margin-bottom: 3rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border: 1px solid black;
+  border: 1px solid rgba(25, 25, 25, 0.4);
 }
 
 nav button {
   width: 10rem;
-  background-color: #736e87;
+  background-color: #f5f5f5;
   border: none;
   font-size: 2rem;
+  border-radius: 3rem;
+  -webkit-transition-property: color background-color;
+  transition-property: color background-color;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
   cursor: pointer;
-}
-
-nav button:hover {
-  color: white;
-}
-
-@media screen and (max-width: 650px) {
-  nav button:not(:last-child) {
-    border-right: 1px solid black;
-  }
+  /*         &:hover{
+            color:white;
+        } */
+  /* &:not(:last-child){
+            @include miniphone{
+                border-right: 1px solid black;
+                border-radius: 0;
+            }
+        } */
 }
 
 @media screen and (max-width: 768px) {
@@ -67,8 +70,9 @@ nav button:hover {
 
 .about {
   padding: 0 1rem 0 1rem;
-  border: 1px solid black;
-  background-color: #AE948B;
+  border: 1px solid rgba(25, 25, 25, 0.4);
+  border-radius: 0.5rem;
+  background-color: #f5f5f5;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -101,8 +105,21 @@ nav button:hover {
   margin-right: 0.5rem;
 }
 
+.about div a {
+  color: #6e6e6e;
+  -webkit-transition: color 0.2s , background-color 0.2s;
+  transition: color 0.2s , background-color 0.2s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .about div a:hover {
-  color: white;
+  color: black;
+  border-radius: 0.5rem;
 }
 
 .row {
@@ -249,7 +266,7 @@ nav button:hover {
 .link {
   height: 100%;
   width: 100%;
-  background-color: #e6cdc3;
+  background-color: #d3d2d2;
   padding-left: 0;
   border: none;
   cursor: pointer;
@@ -257,7 +274,7 @@ nav button:hover {
 
 .creation {
   border: 2px solid #351801;
-  background-color: #723401;
+  background-color: #703c12;
   padding: 1rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -395,12 +412,13 @@ nav button:hover {
       -ms-flex-align: center;
           align-items: center;
   right: 1rem;
-  background-color: #736e87;
-  border: 1px solid black;
+  background-color: #f5f5f5;
+  border: 1px solid rgba(25, 25, 25, 0.4);
 }
 
 .side #mobileFunc {
   display: block;
+  padding: 1rem 0 1rem 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -432,10 +450,6 @@ nav button:hover {
   }
 }
 
-.side > * {
-  margin: 1rem 0 1rem 0;
-}
-
 @media screen and (max-width: 650px) {
   .side > * {
     margin: 0 0.5rem 0 0.5rem;
@@ -446,6 +460,10 @@ nav button:hover {
 .side a {
   text-decoration: none;
   color: black;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
 }
 
 .side a:first-child {
@@ -459,6 +477,10 @@ nav button:hover {
     padding-left: 1rem;
     width: auto;
   }
+}
+
+.side a:not(:first-child):hover {
+  background-color: #afafaf;
 }
 
 @media screen and (max-width: 1024px) {
@@ -484,19 +506,13 @@ nav button:hover {
   color: black;
 }
 
-.side a:hover {
-  color: white;
-}
-
 .side .langLink {
   width: 100%;
-  padding: 5%;
+  padding: 1rem 5%;
   text-align: center;
 }
 
-@media screen and (max-width: 768px) {
-  .side .langLink {
-    padding: 5% 0 5% 0;
-  }
+.side #faArrow {
+  padding: 0 1rem;
 }
 /*# sourceMappingURL=style.css.map */

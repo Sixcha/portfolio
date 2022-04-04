@@ -9,15 +9,15 @@
 @mixin miniphone {
     @media screen and (max-width: 650px) { @content; }
   }
-$first-color: #AE948B;
+$first-color: #f5f5f5;
 
-$secondary-color: #e6cdc3;
+$secondary-color: #d3d2d2;
 
-$tertiary-color: #723401;
+$tertiary-color: #703c12;
 
 $caption-color: #736e879c;
 
-$nav-color: #736e87;
+$nav-color: #f5f5f5;
 
 $content-color: #907168;
 
@@ -44,9 +44,9 @@ body{
 
 a{
     color:black;
-    &:hover{
-        color:white;
-    }
+    /* &:hover{
+        color:teal;
+    } */
 }
 
 nav{
@@ -58,21 +58,25 @@ nav{
     padding:1.5rem;
     margin-bottom:3rem;
     align-items: center;
-    border:1px solid black;
+    border:1px solid rgba(25,25,25,.4);
     button{
         width:10rem;
         background-color: $nav-color;
         border:none;
         font-size:2rem;
+        border-radius: 3rem;
+        transition-property: color background-color;
+        transition-duration: 0.2s;
         cursor: pointer;
-        &:hover{
+/*         &:hover{
             color:white;
-        }
-        &:not(:last-child){
+        } */
+        /* &:not(:last-child){
             @include miniphone{
                 border-right: 1px solid black;
+                border-radius: 0;
             }
-        }
+        } */
     }
     @include phone{
         width: 100%;
@@ -82,9 +86,9 @@ nav{
 .about{
     //margin-left: 2rem;
     padding: 0 1rem 0 1rem ;
-    border:1px solid black;
+    border:1px solid rgba(25,25,25,.4);
+    border-radius: 0.5rem;
     background-color: $first-color;
-    //border-radius: 5px;
     align-items: center;
     flex-basis:30%;
     min-height: 95vh;
@@ -105,8 +109,13 @@ nav{
             margin-right: 0.5rem;
         }
         a{
+            color: #6e6e6e;
+            transition: color 0.2s , background-color 0.2s;
+            display: flex;
+            align-items: center;
             &:hover{
-                color:white;
+                color: black;
+                border-radius: 0.5rem;
             }
         }
     }
@@ -302,9 +311,10 @@ nav{
     align-items: center;
     right: 1rem;
     background-color: $nav-color;
-    border:1px solid black;
+    border:1px solid rgba(25,25,25,.4);
     #mobileFunc{
         display: block;
+        padding:1rem 0 1rem 0;
     }
     @include phone{
         box-shadow:0 0 5px black;
@@ -323,7 +333,7 @@ nav{
         height: 5.5rem;
     }
     >*{
-        margin:1rem 0 1rem 0;
+        //margin:1rem 0 1rem 0;
         @include miniphone{
             margin: 0 0.5rem 0 0.5rem;
             width: 100%;
@@ -332,6 +342,8 @@ nav{
     a{
         text-decoration: none;
         color:black;
+        transition-property: background-color;
+        transition-duration: 0.3s;
         &:first-child{
             width: 9.5rem;
             padding: 2px 0 2px 0;
@@ -342,6 +354,10 @@ nav{
             }
         }
         &:not(:first-child){
+            &:hover{
+                //color:white;
+                background-color: #afafaf;
+            }
             @include tablet{
                 display: none;
             }
@@ -358,16 +374,14 @@ nav{
         &:visited{
             color:black;
         }
-        &:hover{
-            color:white;
-        }
+
     }
     .langLink{
         width: 100%;
-        padding: 5%;
+        padding: 1rem 5%;
         text-align: center;
-        @include phone{
-            padding: 5% 0 5% 0;
-        }
+    }
+    #faArrow{
+        padding: 0 1rem;
     }
 }
