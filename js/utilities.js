@@ -16,7 +16,7 @@ function showSide(){
         if (sideLinks[i].style.display === "block"){
             sideLinks[i].style.display = "none";
         }
-        else if (window.innerWidth> 768 && sideLinks[i].style.display === ""){
+        else if (window.innerWidth> 1024 && sideLinks[i].style.display === ""){
             sideLinks[i].style.display = "none";
         }
         else {
@@ -27,7 +27,7 @@ function showSide(){
 
 function fixSide(){
     let sideLinks = document.getElementsByClassName("hidden");
-    if(window.innerWidth> 768){
+    if(window.innerWidth> 1024){
         document.getElementById("faArrow").className = "fas fa-bars fa-2x";
         for(let i=0;i<sideLinks.length;i++){
             if (sideLinks[i].style.display === "block"){
@@ -48,3 +48,18 @@ function fixSide(){
 
 window.addEventListener('resize', fixSide);
 window.addEventListener('DOMContentLoaded',fixSide)
+
+function revealGrayed(){
+    let grayedText = document.getElementsByClassName("grayed");
+    let experimentButton = document.querySelector(".experimentReveal");
+    for(let i=0; i<grayedText.length; i++){
+        if(grayedText[i].style.backgroundColor === "rgb(144, 113, 104)"){
+            grayedText[i].style.backgroundColor = "black"
+            experimentButton.innerHTML = "Reveal Hidden Files"
+        }
+        else{
+            grayedText[i].style.backgroundColor = "#907168"
+            experimentButton.innerHTML = "Hide Confidential Files"
+        }
+    }
+}

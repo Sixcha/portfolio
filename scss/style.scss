@@ -91,8 +91,8 @@ nav{
     background-color: $first-color;
     align-items: center;
     flex-basis:30%;
-    min-height: 95vh;
-    max-height: 1400px;
+    //min-height: 95vh;
+    max-height: 62.5rem;
     @include phone{
         width: 80%;
     }
@@ -266,6 +266,26 @@ nav{
     }
 }
 
+.storyLine{
+    margin-top: 3rem;
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    &:after{
+        content:'';
+        width: 100%;
+        border-bottom: 1px solid black;
+        position: absolute;
+        left:0;
+        top: 50%;
+        z-index: 1;
+    }
+}
+/* .storyLine::after{
+    
+} */
+
 .headerFix{
     flex-basis: 30%;
 }
@@ -316,7 +336,7 @@ nav{
         display: block;
         padding:1rem 0 1rem 0;
     }
-    @include phone{
+    @include tablet{
         box-shadow:0 0 5px black;
         border-radius: 40px 0 0 40px;
         flex-direction: column;
@@ -347,10 +367,12 @@ nav{
         &:first-child{
             width: 9.5rem;
             padding: 2px 0 2px 0;
+            @include tablet{
+                width: 6rem;
+            }
             @include phone{
                 padding-right: 1rem;
                 padding-left: 1rem;
-                width: auto;
             }
         }
         &:not(:first-child){
@@ -384,4 +406,9 @@ nav{
     #faArrow{
         padding: 0 1rem;
     }
+}
+.grayed{
+    background-color: black;
+    transition-property: background-color;
+    transition-duration: 0.4s;
 }
