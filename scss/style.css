@@ -78,7 +78,9 @@ nav button {
           align-items: center;
   -ms-flex-preferred-size: 30%;
       flex-basis: 30%;
-  max-height: 62.5rem;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
 }
 
 @media screen and (max-width: 768px) {
@@ -511,6 +513,9 @@ nav button {
 @media screen and (max-width: 1024px) {
   .side a:not(:first-child) {
     display: none;
+  }
+  .side a:not(:first-child):hover {
+    background-color: #afafaf00;
   }
 }
 

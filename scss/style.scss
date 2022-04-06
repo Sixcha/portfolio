@@ -92,7 +92,7 @@ nav{
     align-items: center;
     flex-basis:30%;
     //min-height: 95vh;
-    max-height: 62.5rem;
+    max-height: fit-content;
     @include phone{
         width: 80%;
     }
@@ -382,6 +382,9 @@ nav{
             }
             @include tablet{
                 display: none;
+                &:hover{
+                    background-color: #afafaf00;
+                }
             }
             @include miniphone{
                 margin: 0 1rem 0 1rem;
