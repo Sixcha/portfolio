@@ -405,6 +405,9 @@ nav{
         width: 100%;
         padding: 1rem 5%;
         text-align: center;
+        @include tablet{
+            -webkit-tap-highlight-color: transparent;
+        }
     }
     #faArrow{
         padding: 0 1rem;

@@ -542,6 +542,12 @@ nav button {
   text-align: center;
 }
 
+@media screen and (max-width: 1024px) {
+  .side .langLink {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
 .side #faArrow {
   padding: 0 1rem;
 }
